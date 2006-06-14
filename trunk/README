@@ -1,0 +1,19 @@
+libspline v0.1.0
+================
+Version 1.0
+2006-06-11
+
+Copyright © 2006 by Joachim Klahr - All Rights Reserved
+
+
+Table of Contents
+-----------------
+
+  1. Introduction
+
+(1) Introduction
+----------------
+
+  libspline is a C++ spline library with focus on speed and real-time applications integration.
+
+  Read the doc/html/index.html file for full documentation.
