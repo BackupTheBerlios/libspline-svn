@@ -49,6 +49,26 @@ namespace Spline
 	}
 
 	// -------------------------------------------------------------------------
+	void Hermite::getTangent(float* tangent, float distance)
+	{
+		unsigned int segment = 0;
+
+		do 
+		{
+			if(segment > (mAmount - 2))
+			{
+				getTangentOnSegment(tangent, mSegments[mAmount-2]->getLengthFromBeginning() / mSegments[mAmount-2]->getLength(), mAmount-2);
+				return;
+			}
+
+			if((mSegments[segment]->getLengthFromBeginning() + mSegments[segment]->getLength()) >= distance)
+				break;
+		}while(++segment);
+
+		getTangentOnSegment(tangent, (distance - mSegments[segment]->getLengthFromBeginning()) / mSegments[segment]->getLength(), segment);	
+	}
+
+	// -------------------------------------------------------------------------
 	void Hermite::getPositionOnSegment(float* position,	float distance,	unsigned int segment)
 	{
 		float fH1 = 2.0f * distance*distance*distance - 3.0f * distance*distance + 1.0f;
@@ -60,16 +80,43 @@ namespace Spline
 		ControlPoint* end   = mSegments[segment]->getEnd();
 
 		position[0] = begin->position.x * fH1 +
-		              begin->tangent.x  * fH2 +
-		              end->tangent.x    * fH3 +
-		              end->position.x   * fH4;
+			begin->tangent.x  * fH2 +
+			end->tangent.x    * fH3 +
+			end->position.x   * fH4;
 		position[1] = begin->position.y * fH1 +
-		              begin->tangent.y  * fH2 +
-		              end->tangent.y    * fH3 +
-		              end->position.y   * fH4;
+			begin->tangent.y  * fH2 +
+			end->tangent.y    * fH3 +
+			end->position.y   * fH4;
 		position[2] = begin->position.z * fH1 +
-		              begin->tangent.z  * fH2 +
-		              end->tangent.z    * fH3 +
-		              end->position.z   * fH4;
+			begin->tangent.z  * fH2 +
+			end->tangent.z    * fH3 +
+			end->position.z   * fH4;
+	}
+
+	// -------------------------------------------------------------------------
+	void Hermite::getTangentOnSegment(float* tangent, float distance, unsigned int segment)
+	{
+		float fH1 = 6.0f * distance*distance - 6.0f * distance;
+		float fH2 = 3.0f * distance*distance - 4.0f * distance + 1.0f;
+		float fH3 = 3.0f * distance*distance - 2.0f * distance;
+		float fH4 = -6.0f * distance*distance + 6.0f * distance;
+
+		ControlPoint* begin = mSegments[segment]->getBegin();
+		ControlPoint* end   = mSegments[segment]->getEnd();
+
+		tangent[0] = begin->position.x * fH1 +
+			begin->tangent.x  * fH2 +
+			end->tangent.x    * fH3 +
+			end->position.x   * fH4;
+		tangent[1] = begin->position.y * fH1 +
+			begin->tangent.y  * fH2 +
+			end->tangent.y    * fH3 +
+			end->position.y   * fH4;
+		tangent[2] = begin->position.z * fH1 +
+			begin->tangent.z  * fH2 +
+			end->tangent.z    * fH3 +
+			end->position.z   * fH4;
+
+		Math::normalize(tangent);
 	}
 }

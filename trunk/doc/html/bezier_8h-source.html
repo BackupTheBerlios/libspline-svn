@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
-<title>libspline: F:/libspline/libspline/include/bezier.h Source File</title>
+<title>libspline: F:/berliOS/libspline/trunk/include/bezier.h Source File</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <link href="tabs.css" rel="stylesheet" type="text/css">
 </head><body>
@@ -12,7 +12,7 @@
     <li><a href="annotated.html"><span>Classes</span></a></li>
     <li id="current"><a href="files.html"><span>Files</span></a></li>
   </ul></div>
-<h1>F:/libspline/libspline/include/bezier.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/* -----------------------------------------------------------------------------</span>
+<h1>F:/berliOS/libspline/trunk/include/bezier.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/* -----------------------------------------------------------------------------</span>
 <a name="l00002"></a>00002 <span class="comment">libspline - Spline library for realtime applications</span>
 <a name="l00003"></a>00003 <span class="comment">Copyright (C) 2006  Joachim Klahr</span>
 <a name="l00004"></a>00004 <span class="comment"></span>
@@ -46,22 +46,28 @@
 <a name="l00036"></a>00036 
 <a name="l00037"></a>00037                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_spline_1_1_bezier.html#41641e3f236810f4ae0036f88b9c4dba">getWorldPosition</a>(<span class="keywordtype">float</span>* position, <span class="keywordtype">float</span> distance);
 <a name="l00038"></a>00038 
-<a name="l00039"></a>00039                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_spline_1_1_bezier.html#eba075fd17f07701d55072a8a881c42d">getPositionOnSegment</a>(<span class="keywordtype">float</span>* position,
-<a name="l00040"></a>00040                                                   <span class="keywordtype">float</span> distance,
-<a name="l00041"></a>00041                                                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> segment);
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043         <span class="keyword">private</span>:
-<a name="l00045"></a>00045                 <span class="keywordtype">float</span> getBernsteinValue(<span class="keywordtype">float</span> t, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);
-<a name="l00046"></a>00046         };
-<a name="l00047"></a>00047 
-<a name="l00048"></a>00048         <span class="comment">// -------------------------------------------------------------------------</span>
-<a name="l00049"></a><a class="code" href="class_spline_1_1_bezier.html#5e7c533a6203429cdf49d81408f692a5">00049</a>         <span class="keyword">inline</span> <a class="code" href="class_spline_1_1_bezier.html#5e7c533a6203429cdf49d81408f692a5">Bezier::~Bezier</a>()
-<a name="l00050"></a>00050         {
-<a name="l00051"></a>00051         }
-<a name="l00052"></a>00052 }
+<a name="l00039"></a>00039                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_spline_1_1_bezier.html#c943e2c850ce9b75b1d919e14d73c06d">getTangent</a>(<span class="keywordtype">float</span>* tangent, <span class="keywordtype">float</span> distance);
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         <span class="keyword">private</span>:
+<a name="l00042"></a>00042                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> getPositionOnSegment(<span class="keywordtype">float</span>* position,
+<a name="l00043"></a>00043                                                                                   <span class="keywordtype">float</span> distance,
+<a name="l00044"></a>00044                                                                                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> segment);
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> getTangentOnSegment(<span class="keywordtype">float</span>* tangent,
+<a name="l00047"></a>00047                                                                                  <span class="keywordtype">float</span> distance,
+<a name="l00048"></a>00048                                                                                  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> segment);
+<a name="l00049"></a>00049 
+<a name="l00051"></a>00051                 <span class="keywordtype">float</span> getBernsteinValue(<span class="keywordtype">float</span> t, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);
+<a name="l00052"></a>00052         };
 <a name="l00053"></a>00053 
-<a name="l00054"></a>00054 <span class="preprocessor">#endif</span>
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Tue Jun 13 20:37:46 2006 for libspline by&nbsp;
+<a name="l00054"></a>00054         <span class="comment">// -------------------------------------------------------------------------</span>
+<a name="l00055"></a><a class="code" href="class_spline_1_1_bezier.html#5e7c533a6203429cdf49d81408f692a5">00055</a>         <span class="keyword">inline</span> <a class="code" href="class_spline_1_1_bezier.html#5e7c533a6203429cdf49d81408f692a5">Bezier::~Bezier</a>()
+<a name="l00056"></a>00056         {
+<a name="l00057"></a>00057         }
+<a name="l00058"></a>00058 }
+<a name="l00059"></a>00059 
+<a name="l00060"></a>00060 <span class="preprocessor">#endif</span>
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Sun Jun 25 21:46:54 2006 for libspline by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>

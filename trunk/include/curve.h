@@ -64,18 +64,24 @@ namespace Spline
 		                                  float distance,
 							 			  unsigned int segment) = 0;
 
+		/*! Sets the tangent parameter to the tangent on the curve distance units in
+		    on the curve.
+		 * \param tangent Is a float[3] where the elements represents a tangent.
+		 * \param distance The distance from the beginning of the curve. */
+		virtual void getTangent(float* tangent, float distance) = 0;
+
+		/*! Sets the tangent parameter to the normalized tangent on the segment.
+		* \param tangent The normalized tangent
+		* \param distance The distance in on the curve where to find the tangent.
+		* \param segment Which segment to get the tangent from. */
+		virtual void getTangentOnSegment(float* tangent,
+										 float distance,
+										 unsigned int segment) = 0;
+
 		/*! Calculates the total length of the curve.
 		 * \param resolution Higher value means smaller step size which increases the
 		          precision on the length of the curve. */
 		void calculateLength(float resolution);
-
-		/*! Sets the tangent parameter to the normalized tangent on the curve.
-		 * \param tangent The normalized tangent
-		 * \param distance The distance in on the curve where to find the tangent.
-		 * \param resolution How far from the distance value the two points used
-		          to calculate the tangent, should be read. Smaller value means
-				  more precision, but not less performance. */
-		void getTangent(float* tangent, float distance, float resolution = 0.001f);
 
 		/*! \return The total length of the curve. */
 		inline float getLength() const;

@@ -42,9 +42,11 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_curve.html#c02d4440344d059c3a0f6e28d3004f1a">getPositionOnSegment</a> (float *position, float distance, unsigned int segment)=0</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_curve.html#f0268c669c2e1da5eacb54a620d81ac7">calculateLength</a> (float resolution)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_curve.html#6a5bfda507bedec14e232e5f286bf3ad">getTangent</a> (float *tangent, float distance)=0</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_curve.html#a32b47eb6fd4229cf568e15a2cb17efb">getTangent</a> (float *tangent, float distance, float resolution=0.001f)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_curve.html#a300e3ec842d2809618dbf5a165e845a">getTangentOnSegment</a> (float *tangent, float distance, unsigned int segment)=0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_curve.html#f0268c669c2e1da5eacb54a620d81ac7">calculateLength</a> (float resolution)</td></tr>
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_curve.html#cf4d97b04a8505f43b7c1ab74241f468">getLength</a> () const </td></tr>
 
@@ -197,9 +199,9 @@ Calculates the total length of the curve. <dl compact><dt><b>Parameters:</b></dt
 <dl compact><dt><b>Returns:</b></dt><dd>The total length of the curve. </dd></dl>
 
 <p>
-Definition at line <a class="el" href="curve_8h-source.html#l00095">95</a> of file <a class="el" href="curve_8h-source.html">curve.h</a>.
+Definition at line <a class="el" href="curve_8h-source.html#l00101">101</a> of file <a class="el" href="curve_8h-source.html">curve.h</a>.
 <p>
-References <a class="el" href="curve_8h-source.html#l00088">mLength</a>.    </td>
+References <a class="el" href="curve_8h-source.html#l00094">mLength</a>.    </td>
   </tr>
 </table>
 <a class="anchor" name="c02d4440344d059c3a0f6e28d3004f1a"></a><!-- doxytag: member="Spline::Curve::getPositionOnSegment" ref="c02d4440344d059c3a0f6e28d3004f1a" args="(float *position, float distance, unsigned int segment)=0" --><p>
@@ -249,18 +251,16 @@ Sets the position parameter to the world position on the specified segment. The 
     <tr><td valign="top"></td><td valign="top"><em>segment</em>&nbsp;</td><td>Which segment to get the position from. </td></tr>
   </table>
 </dl>
-
-<p>
-Implemented in <a class="el" href="class_spline_1_1_bezier.html#eba075fd17f07701d55072a8a881c42d">Spline::Bezier</a>, and <a class="el" href="class_spline_1_1_hermite.html#4f56ecc9c705cc79a3c426585aa51b3d">Spline::Hermite</a>.    </td>
+    </td>
   </tr>
 </table>
-<a class="anchor" name="a32b47eb6fd4229cf568e15a2cb17efb"></a><!-- doxytag: member="Spline::Curve::getTangent" ref="a32b47eb6fd4229cf568e15a2cb17efb" args="(float *tangent, float distance, float resolution=0.001f)" --><p>
+<a class="anchor" name="6a5bfda507bedec14e232e5f286bf3ad"></a><!-- doxytag: member="Spline::Curve::getTangent" ref="6a5bfda507bedec14e232e5f286bf3ad" args="(float *tangent, float distance)=0" --><p>
 <table class="mdTable" cellpadding="2" cellspacing="0">
   <tr>
     <td class="mdRow">
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td class="md" nowrap valign="top">void Spline::Curve::getTangent           </td>
+          <td class="md" nowrap valign="top">virtual void Spline::Curve::getTangent           </td>
           <td class="md" valign="top">(&nbsp;</td>
           <td class="md" nowrap valign="top">float *&nbsp;</td>
           <td class="mdname" nowrap> <em>tangent</em>, </td>
@@ -269,18 +269,12 @@ Implemented in <a class="el" href="class_spline_1_1_bezier.html#eba075fd17f07701
           <td class="md" nowrap align="right"></td>
           <td class="md"></td>
           <td class="md" nowrap>float&nbsp;</td>
-          <td class="mdname" nowrap> <em>distance</em>, </td>
-        </tr>
-        <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>float&nbsp;</td>
-          <td class="mdname" nowrap> <em>resolution</em> = <code>0.001f</code></td>
+          <td class="mdname" nowrap> <em>distance</em></td>
         </tr>
         <tr>
           <td class="md"></td>
           <td class="md">)&nbsp;</td>
-          <td class="md" colspan="2"></td>
+          <td class="md" colspan="2"><code> [pure virtual]</code></td>
         </tr>
       </table>
     </td>
@@ -294,11 +288,62 @@ Implemented in <a class="el" href="class_spline_1_1_bezier.html#eba075fd17f07701
     <td>
 
 <p>
-Sets the tangent parameter to the normalized tangent on the curve. <dl compact><dt><b>Parameters:</b></dt><dd>
+Sets the tangent parameter to the tangent on the curve distance units in on the curve. <dl compact><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>tangent</em>&nbsp;</td><td>Is a float[3] where the elements represents a tangent. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>distance</em>&nbsp;</td><td>The distance from the beginning of the curve. </td></tr>
+  </table>
+</dl>
+
+<p>
+Implemented in <a class="el" href="class_spline_1_1_bezier.html#c943e2c850ce9b75b1d919e14d73c06d">Spline::Bezier</a>, and <a class="el" href="class_spline_1_1_hermite.html#34d86483d2066de3690857acfce36b35">Spline::Hermite</a>.    </td>
+  </tr>
+</table>
+<a class="anchor" name="a300e3ec842d2809618dbf5a165e845a"></a><!-- doxytag: member="Spline::Curve::getTangentOnSegment" ref="a300e3ec842d2809618dbf5a165e845a" args="(float *tangent, float distance, unsigned int segment)=0" --><p>
+<table class="mdTable" cellpadding="2" cellspacing="0">
+  <tr>
+    <td class="mdRow">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td class="md" nowrap valign="top">virtual void Spline::Curve::getTangentOnSegment           </td>
+          <td class="md" valign="top">(&nbsp;</td>
+          <td class="md" nowrap valign="top">float *&nbsp;</td>
+          <td class="mdname" nowrap> <em>tangent</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>float&nbsp;</td>
+          <td class="mdname" nowrap> <em>distance</em>, </td>
+        </tr>
+        <tr>
+          <td class="md" nowrap align="right"></td>
+          <td class="md"></td>
+          <td class="md" nowrap>unsigned int&nbsp;</td>
+          <td class="mdname" nowrap> <em>segment</em></td>
+        </tr>
+        <tr>
+          <td class="md"></td>
+          <td class="md">)&nbsp;</td>
+          <td class="md" colspan="2"><code> [pure virtual]</code></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table cellspacing="5" cellpadding="0" border="0">
+  <tr>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+
+<p>
+Sets the tangent parameter to the normalized tangent on the segment. <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>tangent</em>&nbsp;</td><td>The normalized tangent </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>distance</em>&nbsp;</td><td>The distance in on the curve where to find the tangent. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>resolution</em>&nbsp;</td><td>How far from the distance value the two points used to calculate the tangent, should be read. Smaller value means more precision, but not less performance. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>segment</em>&nbsp;</td><td>Which segment to get the tangent from. </td></tr>
   </table>
 </dl>
     </td>
@@ -373,7 +418,7 @@ Implemented in <a class="el" href="class_spline_1_1_bezier.html#41641e3f236810f4
 <p>
 The total amount of control points the curve is constructed with. 
 <p>
-Definition at line <a class="el" href="curve_8h-source.html#l00091">91</a> of file <a class="el" href="curve_8h-source.html">curve.h</a>.    </td>
+Definition at line <a class="el" href="curve_8h-source.html#l00097">97</a> of file <a class="el" href="curve_8h-source.html">curve.h</a>.    </td>
   </tr>
 </table>
 <a class="anchor" name="d3ee97d4fa7ebcfde33c5d54415558e1"></a><!-- doxytag: member="Spline::Curve::mLength" ref="d3ee97d4fa7ebcfde33c5d54415558e1" args="" --><p>
@@ -398,9 +443,9 @@ Definition at line <a class="el" href="curve_8h-source.html#l00091">91</a> of fi
 <p>
 The total length of the curve. 
 <p>
-Definition at line <a class="el" href="curve_8h-source.html#l00088">88</a> of file <a class="el" href="curve_8h-source.html">curve.h</a>.
+Definition at line <a class="el" href="curve_8h-source.html#l00094">94</a> of file <a class="el" href="curve_8h-source.html">curve.h</a>.
 <p>
-Referenced by <a class="el" href="curve_8h-source.html#l00095">getLength()</a>.    </td>
+Referenced by <a class="el" href="curve_8h-source.html#l00101">getLength()</a>.    </td>
   </tr>
 </table>
 <a class="anchor" name="b571d74b525f5c51a78e8e1db97dff3e"></a><!-- doxytag: member="Spline::Curve::mSegments" ref="b571d74b525f5c51a78e8e1db97dff3e" args="" --><p>
@@ -425,12 +470,12 @@ Referenced by <a class="el" href="curve_8h-source.html#l00095">getLength()</a>. 
 <p>
 All segments of the curve. 
 <p>
-Definition at line <a class="el" href="curve_8h-source.html#l00085">85</a> of file <a class="el" href="curve_8h-source.html">curve.h</a>.    </td>
+Definition at line <a class="el" href="curve_8h-source.html#l00091">91</a> of file <a class="el" href="curve_8h-source.html">curve.h</a>.    </td>
   </tr>
 </table>
 <hr>The documentation for this class was generated from the following file:<ul>
-<li>F:/libspline/libspline/include/<a class="el" href="curve_8h-source.html">curve.h</a></ul>
-<hr size="1"><address style="align: right;"><small>Generated on Tue Jun 13 20:37:46 2006 for libspline by&nbsp;
+<li>F:/berliOS/libspline/trunk/include/<a class="el" href="curve_8h-source.html">curve.h</a></ul>
+<hr size="1"><address style="align: right;"><small>Generated on Sun Jun 25 21:46:54 2006 for libspline by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>

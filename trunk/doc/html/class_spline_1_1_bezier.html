@@ -35,7 +35,7 @@
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_bezier.html#41641e3f236810f4ae0036f88b9c4dba">getWorldPosition</a> (float *position, float distance)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_bezier.html#eba075fd17f07701d55072a8a881c42d">getPositionOnSegment</a> (float *position, float distance, unsigned int segment)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_bezier.html#c943e2c850ce9b75b1d919e14d73c06d">getTangent</a> (float *tangent, float distance)</td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
@@ -47,28 +47,22 @@
 
 <p>
 Definition at line <a class="el" href="bezier_8h-source.html#l00030">30</a> of file <a class="el" href="bezier_8h-source.html">bezier.h</a>.<hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="eba075fd17f07701d55072a8a881c42d"></a><!-- doxytag: member="Spline::Bezier::getPositionOnSegment" ref="eba075fd17f07701d55072a8a881c42d" args="(float *position, float distance, unsigned int segment)" --><p>
+<a class="anchor" name="c943e2c850ce9b75b1d919e14d73c06d"></a><!-- doxytag: member="Spline::Bezier::getTangent" ref="c943e2c850ce9b75b1d919e14d73c06d" args="(float *tangent, float distance)" --><p>
 <table class="mdTable" cellpadding="2" cellspacing="0">
   <tr>
     <td class="mdRow">
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td class="md" nowrap valign="top">virtual void Spline::Bezier::getPositionOnSegment           </td>
+          <td class="md" nowrap valign="top">virtual void Spline::Bezier::getTangent           </td>
           <td class="md" valign="top">(&nbsp;</td>
           <td class="md" nowrap valign="top">float *&nbsp;</td>
-          <td class="mdname" nowrap> <em>position</em>, </td>
+          <td class="mdname" nowrap> <em>tangent</em>, </td>
         </tr>
         <tr>
           <td class="md" nowrap align="right"></td>
           <td class="md"></td>
           <td class="md" nowrap>float&nbsp;</td>
-          <td class="mdname" nowrap> <em>distance</em>, </td>
-        </tr>
-        <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>unsigned int&nbsp;</td>
-          <td class="mdname" nowrap> <em>segment</em></td>
+          <td class="mdname" nowrap> <em>distance</em></td>
         </tr>
         <tr>
           <td class="md"></td>
@@ -87,16 +81,15 @@ Definition at line <a class="el" href="bezier_8h-source.html#l00030">30</a> of f
     <td>
 
 <p>
-Sets the position parameter to the world position on the specified segment. The distance parameter must be a value between 0 and 1.0. <dl compact><dt><b>Parameters:</b></dt><dd>
+Sets the tangent parameter to the tangent on the curve distance units in on the curve. <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>Is a float[3] where the elements represents a position coordinate. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tangent</em>&nbsp;</td><td>Is a float[3] where the elements represents a tangent. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>distance</em>&nbsp;</td><td>The distance from the beginning of the curve. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>segment</em>&nbsp;</td><td>Which segment to get the position from. </td></tr>
   </table>
 </dl>
 
 <p>
-Implements <a class="el" href="class_spline_1_1_curve.html#c02d4440344d059c3a0f6e28d3004f1a">Spline::Curve</a>.    </td>
+Implements <a class="el" href="class_spline_1_1_curve.html#6a5bfda507bedec14e232e5f286bf3ad">Spline::Curve</a>.    </td>
   </tr>
 </table>
 <a class="anchor" name="41641e3f236810f4ae0036f88b9c4dba"></a><!-- doxytag: member="Spline::Bezier::getWorldPosition" ref="41641e3f236810f4ae0036f88b9c4dba" args="(float *position, float distance)" --><p>
@@ -146,8 +139,8 @@ Implements <a class="el" href="class_spline_1_1_curve.html#d54c0a45ef06d5a6ed060
   </tr>
 </table>
 <hr>The documentation for this class was generated from the following file:<ul>
-<li>F:/libspline/libspline/include/<a class="el" href="bezier_8h-source.html">bezier.h</a></ul>
-<hr size="1"><address style="align: right;"><small>Generated on Tue Jun 13 20:37:46 2006 for libspline by&nbsp;
+<li>F:/berliOS/libspline/trunk/include/<a class="el" href="bezier_8h-source.html">bezier.h</a></ul>
+<hr size="1"><address style="align: right;"><small>Generated on Sun Jun 25 21:46:54 2006 for libspline by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>

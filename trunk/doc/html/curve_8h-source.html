@@ -1,6 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html><head><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
-<title>libspline: F:/libspline/libspline/include/curve.h Source File</title>
+<title>libspline: F:/berliOS/libspline/trunk/include/curve.h Source File</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css">
 <link href="tabs.css" rel="stylesheet" type="text/css">
 </head><body>
@@ -12,7 +12,7 @@
     <li><a href="annotated.html"><span>Classes</span></a></li>
     <li id="current"><a href="files.html"><span>Files</span></a></li>
   </ul></div>
-<h1>F:/libspline/libspline/include/curve.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/* -----------------------------------------------------------------------------</span>
+<h1>F:/berliOS/libspline/trunk/include/curve.h</h1><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/* -----------------------------------------------------------------------------</span>
 <a name="l00002"></a>00002 <span class="comment">libspline - Spline library for realtime applications</span>
 <a name="l00003"></a>00003 <span class="comment">Copyright (C) 2006  Joachim Klahr</span>
 <a name="l00004"></a>00004 <span class="comment"></span>
@@ -53,29 +53,33 @@
 <a name="l00064"></a>00064                                                   <span class="keywordtype">float</span> distance,
 <a name="l00065"></a>00065                                                                                   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> segment) = 0;
 <a name="l00066"></a>00066 
-<a name="l00070"></a>00070                 <span class="keywordtype">void</span> <a class="code" href="class_spline_1_1_curve.html#f0268c669c2e1da5eacb54a620d81ac7">calculateLength</a>(<span class="keywordtype">float</span> resolution);
-<a name="l00071"></a>00071 
-<a name="l00078"></a>00078                 <span class="keywordtype">void</span> <a class="code" href="class_spline_1_1_curve.html#a32b47eb6fd4229cf568e15a2cb17efb">getTangent</a>(<span class="keywordtype">float</span>* tangent, <span class="keywordtype">float</span> distance, <span class="keywordtype">float</span> resolution = 0.001f);
-<a name="l00079"></a>00079 
-<a name="l00081"></a>00081                 <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="class_spline_1_1_curve.html#cf4d97b04a8505f43b7c1ab74241f468">getLength</a>() <span class="keyword">const</span>;
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083         <span class="keyword">protected</span>:
-<a name="l00085"></a><a class="code" href="class_spline_1_1_curve.html#b571d74b525f5c51a78e8e1db97dff3e">00085</a>                 <a class="code" href="class_spline_1_1_segment.html">Segment</a>** <a class="code" href="class_spline_1_1_curve.html#b571d74b525f5c51a78e8e1db97dff3e">mSegments</a>;
-<a name="l00086"></a>00086 
-<a name="l00088"></a><a class="code" href="class_spline_1_1_curve.html#d3ee97d4fa7ebcfde33c5d54415558e1">00088</a>                 <span class="keywordtype">float</span> <a class="code" href="class_spline_1_1_curve.html#d3ee97d4fa7ebcfde33c5d54415558e1">mLength</a>;
-<a name="l00089"></a>00089 
-<a name="l00091"></a><a class="code" href="class_spline_1_1_curve.html#87d32c9a2dc99a0eadf0d9d7ca33652e">00091</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_spline_1_1_curve.html#87d32c9a2dc99a0eadf0d9d7ca33652e">mAmount</a>;
-<a name="l00092"></a>00092         };
-<a name="l00093"></a>00093 
-<a name="l00094"></a>00094         <span class="comment">// -------------------------------------------------------------------------</span>
-<a name="l00095"></a><a class="code" href="class_spline_1_1_curve.html#cf4d97b04a8505f43b7c1ab74241f468">00095</a>         <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="class_spline_1_1_curve.html#cf4d97b04a8505f43b7c1ab74241f468">Curve::getLength</a>()<span class="keyword"> const</span>
-<a name="l00096"></a>00096 <span class="keyword">        </span>{
-<a name="l00097"></a>00097                 <span class="keywordflow">return</span> <a class="code" href="class_spline_1_1_curve.html#d3ee97d4fa7ebcfde33c5d54415558e1">mLength</a>;
-<a name="l00098"></a>00098         }
-<a name="l00099"></a>00099 }
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 <span class="preprocessor">#endif</span>
-</pre></div><hr size="1"><address style="align: right;"><small>Generated on Tue Jun 13 20:37:46 2006 for libspline by&nbsp;
+<a name="l00071"></a>00071                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_spline_1_1_curve.html#6a5bfda507bedec14e232e5f286bf3ad">getTangent</a>(<span class="keywordtype">float</span>* tangent, <span class="keywordtype">float</span> distance) = 0;
+<a name="l00072"></a>00072 
+<a name="l00077"></a>00077                 <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_spline_1_1_curve.html#a300e3ec842d2809618dbf5a165e845a">getTangentOnSegment</a>(<span class="keywordtype">float</span>* tangent,
+<a name="l00078"></a>00078                                                                                  <span class="keywordtype">float</span> distance,
+<a name="l00079"></a>00079                                                                                  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> segment) = 0;
+<a name="l00080"></a>00080 
+<a name="l00084"></a>00084                 <span class="keywordtype">void</span> <a class="code" href="class_spline_1_1_curve.html#f0268c669c2e1da5eacb54a620d81ac7">calculateLength</a>(<span class="keywordtype">float</span> resolution);
+<a name="l00085"></a>00085 
+<a name="l00087"></a>00087                 <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="class_spline_1_1_curve.html#cf4d97b04a8505f43b7c1ab74241f468">getLength</a>() <span class="keyword">const</span>;
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <span class="keyword">protected</span>:
+<a name="l00091"></a><a class="code" href="class_spline_1_1_curve.html#b571d74b525f5c51a78e8e1db97dff3e">00091</a>                 <a class="code" href="class_spline_1_1_segment.html">Segment</a>** <a class="code" href="class_spline_1_1_curve.html#b571d74b525f5c51a78e8e1db97dff3e">mSegments</a>;
+<a name="l00092"></a>00092 
+<a name="l00094"></a><a class="code" href="class_spline_1_1_curve.html#d3ee97d4fa7ebcfde33c5d54415558e1">00094</a>                 <span class="keywordtype">float</span> <a class="code" href="class_spline_1_1_curve.html#d3ee97d4fa7ebcfde33c5d54415558e1">mLength</a>;
+<a name="l00095"></a>00095 
+<a name="l00097"></a><a class="code" href="class_spline_1_1_curve.html#87d32c9a2dc99a0eadf0d9d7ca33652e">00097</a>                 <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_spline_1_1_curve.html#87d32c9a2dc99a0eadf0d9d7ca33652e">mAmount</a>;
+<a name="l00098"></a>00098         };
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100         <span class="comment">// -------------------------------------------------------------------------</span>
+<a name="l00101"></a><a class="code" href="class_spline_1_1_curve.html#cf4d97b04a8505f43b7c1ab74241f468">00101</a>         <span class="keyword">inline</span> <span class="keywordtype">float</span> <a class="code" href="class_spline_1_1_curve.html#cf4d97b04a8505f43b7c1ab74241f468">Curve::getLength</a>()<span class="keyword"> const</span>
+<a name="l00102"></a>00102 <span class="keyword">        </span>{
+<a name="l00103"></a>00103                 <span class="keywordflow">return</span> <a class="code" href="class_spline_1_1_curve.html#d3ee97d4fa7ebcfde33c5d54415558e1">mLength</a>;
+<a name="l00104"></a>00104         }
+<a name="l00105"></a>00105 }
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 <span class="preprocessor">#endif</span>
+</pre></div><hr size="1"><address style="align: right;"><small>Generated on Sun Jun 25 21:46:54 2006 for libspline by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>

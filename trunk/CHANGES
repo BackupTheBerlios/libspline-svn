@@ -1,2 +1,5 @@
+  * Version 0.1.1 (2006-06-25)
+    - The getTangent function for Hermite splines is now 60 % faster
+
   * Version 0.1.0 (2006-06-11)
     - Support for CatmullRom, Cardinal, KochanekBartels and Bezier splines

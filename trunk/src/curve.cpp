@@ -85,24 +85,4 @@ namespace Spline
 			mLength += segmentLength;
 		}
 	}
-
-	// -------------------------------------------------------------------------
-	void Curve::getTangent(float* tangent, float distance, float resolution)
-	{
-		float position_a[3];
-		float position_b[3];
-
-		getWorldPosition(position_a, distance + resolution);
-		getWorldPosition(position_b, distance - resolution);
-
-		position_a[0] -= position_b[0];
-		position_a[1] -= position_b[1];
-		position_a[2] -= position_b[2];
-
-		Math::normalize(position_a);
-
-		tangent[0] = position_a[0];
-		tangent[1] = position_a[1];
-		tangent[2] = position_a[2];
-	}
 }

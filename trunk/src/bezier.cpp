@@ -34,6 +34,27 @@ namespace Spline
 	}
 
 	// -------------------------------------------------------------------------
+	void Bezier::getTangent(float* tangent, float distance)
+	{
+		float resolution = 0.01f;
+		float position_a[3];
+		float position_b[3];
+
+		getWorldPosition(position_a, distance + resolution);
+		getWorldPosition(position_b, distance - resolution);
+
+		position_a[0] -= position_b[0];
+		position_a[1] -= position_b[1];
+		position_a[2] -= position_b[2];
+
+		Math::normalize(position_a);
+
+		tangent[0] = position_a[0];
+		tangent[1] = position_a[1];
+		tangent[2] = position_a[2];
+	}
+
+	// -------------------------------------------------------------------------
 	void Bezier::getPositionOnSegment(float* position, float distance, unsigned int segment)
 	{
 		position[0] = 0;
@@ -54,6 +75,11 @@ namespace Spline
 		position[0] += mSegments[mAmount-2]->getEnd()->position.x * b;
 		position[1] += mSegments[mAmount-2]->getEnd()->position.y * b;
 		position[2] += mSegments[mAmount-2]->getEnd()->position.z * b;
+	}
+
+	// -------------------------------------------------------------------------
+	void Bezier::getTangentOnSegment(float* tangent, float distance, unsigned int segment)
+	{
 	}
 
 	// -------------------------------------------------------------------------

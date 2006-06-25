@@ -38,9 +38,16 @@ namespace Spline
 
 		virtual void getWorldPosition(float* position, float distance);
 
+		virtual void getTangent(float* tangent, float distance);
+
+	private:
 		virtual void getPositionOnSegment(float* position,
-		                                  float distance,
+										  float distance,
 										  unsigned int segment);
+
+		virtual void getTangentOnSegment(float* tangent,
+										 float distance,
+										 unsigned int segment);
 	};
 
 	// -------------------------------------------------------------------------

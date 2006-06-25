@@ -38,7 +38,7 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 <tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_hermite.html#bc9b68fe3f9ad21aa781764c87c3bcc0">getWorldPosition</a> (float *position, float distance)</td></tr>
 
-<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_hermite.html#4f56ecc9c705cc79a3c426585aa51b3d">getPositionOnSegment</a> (float *position, float distance, unsigned int segment)</td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">virtual void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spline_1_1_hermite.html#34d86483d2066de3690857acfce36b35">getTangent</a> (float *tangent, float distance)</td></tr>
 
 </table>
 <hr><a name="_details"></a><h2>Detailed Description</h2>
@@ -50,28 +50,22 @@ virtual&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 
 <p>
 Definition at line <a class="el" href="hermite_8h-source.html#l00032">32</a> of file <a class="el" href="hermite_8h-source.html">hermite.h</a>.<hr><h2>Member Function Documentation</h2>
-<a class="anchor" name="4f56ecc9c705cc79a3c426585aa51b3d"></a><!-- doxytag: member="Spline::Hermite::getPositionOnSegment" ref="4f56ecc9c705cc79a3c426585aa51b3d" args="(float *position, float distance, unsigned int segment)" --><p>
+<a class="anchor" name="34d86483d2066de3690857acfce36b35"></a><!-- doxytag: member="Spline::Hermite::getTangent" ref="34d86483d2066de3690857acfce36b35" args="(float *tangent, float distance)" --><p>
 <table class="mdTable" cellpadding="2" cellspacing="0">
   <tr>
     <td class="mdRow">
       <table cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td class="md" nowrap valign="top">virtual void Spline::Hermite::getPositionOnSegment           </td>
+          <td class="md" nowrap valign="top">virtual void Spline::Hermite::getTangent           </td>
           <td class="md" valign="top">(&nbsp;</td>
           <td class="md" nowrap valign="top">float *&nbsp;</td>
-          <td class="mdname" nowrap> <em>position</em>, </td>
+          <td class="mdname" nowrap> <em>tangent</em>, </td>
         </tr>
         <tr>
           <td class="md" nowrap align="right"></td>
           <td class="md"></td>
           <td class="md" nowrap>float&nbsp;</td>
-          <td class="mdname" nowrap> <em>distance</em>, </td>
-        </tr>
-        <tr>
-          <td class="md" nowrap align="right"></td>
-          <td class="md"></td>
-          <td class="md" nowrap>unsigned int&nbsp;</td>
-          <td class="mdname" nowrap> <em>segment</em></td>
+          <td class="mdname" nowrap> <em>distance</em></td>
         </tr>
         <tr>
           <td class="md"></td>
@@ -90,16 +84,15 @@ Definition at line <a class="el" href="hermite_8h-source.html#l00032">32</a> of 
     <td>
 
 <p>
-Sets the position parameter to the world position on the specified segment. The distance parameter must be a value between 0 and 1.0. <dl compact><dt><b>Parameters:</b></dt><dd>
+Sets the tangent parameter to the tangent on the curve distance units in on the curve. <dl compact><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em>position</em>&nbsp;</td><td>Is a float[3] where the elements represents a position coordinate. </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>tangent</em>&nbsp;</td><td>Is a float[3] where the elements represents a tangent. </td></tr>
     <tr><td valign="top"></td><td valign="top"><em>distance</em>&nbsp;</td><td>The distance from the beginning of the curve. </td></tr>
-    <tr><td valign="top"></td><td valign="top"><em>segment</em>&nbsp;</td><td>Which segment to get the position from. </td></tr>
   </table>
 </dl>
 
 <p>
-Implements <a class="el" href="class_spline_1_1_curve.html#c02d4440344d059c3a0f6e28d3004f1a">Spline::Curve</a>.    </td>
+Implements <a class="el" href="class_spline_1_1_curve.html#6a5bfda507bedec14e232e5f286bf3ad">Spline::Curve</a>.    </td>
   </tr>
 </table>
 <a class="anchor" name="bc9b68fe3f9ad21aa781764c87c3bcc0"></a><!-- doxytag: member="Spline::Hermite::getWorldPosition" ref="bc9b68fe3f9ad21aa781764c87c3bcc0" args="(float *position, float distance)" --><p>
@@ -149,8 +142,8 @@ Implements <a class="el" href="class_spline_1_1_curve.html#d54c0a45ef06d5a6ed060
   </tr>
 </table>
 <hr>The documentation for this class was generated from the following file:<ul>
-<li>F:/libspline/libspline/include/<a class="el" href="hermite_8h-source.html">hermite.h</a></ul>
-<hr size="1"><address style="align: right;"><small>Generated on Tue Jun 13 20:37:46 2006 for libspline by&nbsp;
+<li>F:/berliOS/libspline/trunk/include/<a class="el" href="hermite_8h-source.html">hermite.h</a></ul>
+<hr size="1"><address style="align: right;"><small>Generated on Sun Jun 25 21:46:54 2006 for libspline by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>
