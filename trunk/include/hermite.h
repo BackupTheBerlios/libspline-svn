@@ -53,6 +53,7 @@ namespace Spline
 	// -------------------------------------------------------------------------
 	inline Hermite::~Hermite()
 	{
+		SPLINE_SAFE_DELETE_ARRAY(mControlPoints);
 	}
 }
 

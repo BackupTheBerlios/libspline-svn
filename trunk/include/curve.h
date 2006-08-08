@@ -86,9 +86,18 @@ namespace Spline
 		/*! \return The total length of the curve. */
 		inline float getLength() const;
 
+		/*! \return The amount of controlpoints. */
+		inline unsigned int getNumOfControlPoints() const;
+
+		/*! \return The specified segment from the beginning of the curve. */
+		inline Segment* getSegment(unsigned int segment) const;
+
 	protected:
 		/*! All segments of the curve. */
 		Segment** mSegments;
+
+		/*! All control points of the curve. */
+		ControlPoint* mControlPoints;
 
 		/*! The total length of the curve. */
 		float mLength;
@@ -101,6 +110,18 @@ namespace Spline
 	inline float Curve::getLength() const
 	{
 		return mLength;
+	}
+
+	// -------------------------------------------------------------------------
+	inline unsigned int Curve::getNumOfControlPoints() const
+	{
+		return mAmount;
+	}
+
+	// -------------------------------------------------------------------------
+	inline Segment* Curve::getSegment(unsigned int segment) const
+	{
+		return mSegments[segment];
 	}
 }
 

@@ -23,7 +23,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 namespace Spline
 {
 	// -------------------------------------------------------------------------
-	Curve::Curve(ControlPoint* controlPoints, unsigned int amount) : mLength(0)
+	Curve::Curve(ControlPoint* controlPoints, unsigned int amount) : mLength(0),
+		mControlPoints(controlPoints)
 	{
 		mAmount = amount;
 

@@ -54,6 +54,7 @@ namespace Spline
 	// -------------------------------------------------------------------------
 	inline Bezier::~Bezier()
 	{
+		SPLINE_SAFE_DELETE_ARRAY(mControlPoints);
 	}
 }
 
