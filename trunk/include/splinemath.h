@@ -79,7 +79,7 @@ namespace Spline
 
 			--n;
 
-			float m = static_cast<float>(x);
+			float m = x;
 
 			do
 			{
