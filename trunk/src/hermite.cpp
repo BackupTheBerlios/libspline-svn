@@ -71,10 +71,10 @@ namespace Spline
 	// -------------------------------------------------------------------------
 	void Hermite::getPositionOnSegment(float* position,	float distance,	unsigned int segment)
 	{
-		float fH1 = (2.0f * distance - 3.0f)*distance*distance + 1.0f;
-		float fH2 = (distance - 2.0f)*distance*distance + distance;
-		float fH3 = (distance*distance - distance) * distance;
-		float fH4 = (-2.0f * distance + 3.0f) * distance*distance;
+		float fH1 = (2.0f * distance - 3.0f) * distance * distance + 1.0f;
+		float fH2 = (distance - 2.0f) * distance * distance + distance;
+		float fH3 = (distance * distance - distance) * distance;
+		float fH4 = (-2.0f * distance + 3.0f) * distance * distance;
 
 		ControlPoint* begin = mSegments[segment]->getBegin();
 		ControlPoint* end   = mSegments[segment]->getEnd();
@@ -96,10 +96,10 @@ namespace Spline
 	// -------------------------------------------------------------------------
 	void Hermite::getTangentOnSegment(float* tangent, float distance, unsigned int segment)
 	{
-		float fH1 = 6.0f * distance*distance - 6.0f * distance;
-		float fH2 = 3.0f * distance*distance - 4.0f * distance + 1.0f;
-		float fH3 = 3.0f * distance*distance - 2.0f * distance;
-		float fH4 = -6.0f * distance*distance + 6.0f * distance;
+		float fH1 = ( 6.0f * distance - 6.0f) * distance;
+		float fH2 = ( 3.0f * distance - 4.0f) * distance + 1.0f;
+		float fH3 = ( 3.0f * distance - 2.0f) * distance;
+		float fH4 = (-6.0f * distance + 6.0f) * distance;
 
 		ControlPoint* begin = mSegments[segment]->getBegin();
 		ControlPoint* end   = mSegments[segment]->getEnd();
