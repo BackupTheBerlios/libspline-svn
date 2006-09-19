@@ -44,9 +44,9 @@ namespace Spline
 			mSegments[i]->setEndTangent(tangent);
 		}
 
-		tangent[0] = mSegments[mAmount-2]->getBegin()->tangent.x;
-		tangent[1] = mSegments[mAmount-2]->getBegin()->tangent.y;
-		tangent[2] = mSegments[mAmount-2]->getBegin()->tangent.z;
+		tangent[0] = mSegments[mAmount-2]->getEnd()->position.x - mSegments[mAmount-2]->getBegin()->position.x;
+		tangent[1] = mSegments[mAmount-2]->getEnd()->position.y - mSegments[mAmount-2]->getBegin()->position.y;
+		tangent[2] = mSegments[mAmount-2]->getEnd()->position.z - mSegments[mAmount-2]->getBegin()->position.z;
 		mSegments[mAmount-2]->setEndTangent(tangent);
 	}
 }
