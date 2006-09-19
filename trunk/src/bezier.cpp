@@ -63,7 +63,7 @@ namespace Spline
 
 		float b;
 
-		for(unsigned int i = 0; i < mAmount-1; ++i)
+		for(register unsigned int i = 0; i < mAmount-1; ++i)
 		{
 			b = getBernsteinValue(distance, i);
 			position[0] += mSegments[i]->getBegin()->position.x * b;

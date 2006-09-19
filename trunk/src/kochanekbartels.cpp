@@ -41,7 +41,7 @@ namespace Spline
 		mSegments[0]->setBeginTangent(positionA);
 
 		// REWRITTEN WITHOUT TESTED
-		for(unsigned int i = 0; i < mAmount-2; ++i)
+		for(register unsigned int i = 0; i < mAmount-2; ++i)
 		{
 			positionA[0] = mSegments[i]->getEnd()->position.x - mSegments[i]->getBegin()->position.x;
 			positionA[1] = mSegments[i]->getEnd()->position.y - mSegments[i]->getBegin()->position.y;
@@ -65,6 +65,5 @@ namespace Spline
 		positionA[1] = mSegments[mAmount-2]->getBegin()->tangent.y;
 		positionA[2] = mSegments[mAmount-2]->getBegin()->tangent.z;
 		mSegments[mAmount-2]->setEndTangent(positionA);
-
 	}
 }

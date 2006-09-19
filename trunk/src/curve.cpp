@@ -24,10 +24,8 @@ namespace Spline
 {
 	// -------------------------------------------------------------------------
 	Curve::Curve(ControlPoint* controlPoints, unsigned int amount) : mLength(0),
-		mControlPoints(controlPoints)
+		mControlPoints(controlPoints), mAmount(amount)
 	{
-		mAmount = amount;
-
 		mSegments = new Segment*[mAmount-1];
 
 		mSegments[0] = new Segment();

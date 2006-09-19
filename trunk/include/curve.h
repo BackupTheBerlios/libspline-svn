@@ -40,9 +40,7 @@ namespace Spline
 		          pointing at. */
 		Curve(ControlPoint* controlPoints, unsigned int amount);
 
-		/*! Deletes all segments.
-		 * \remark Remember to delete[] your ControlPoints. The Curve will not
-		           do this for you. */
+		/*! Deletes all segments and control points. */
 		virtual ~Curve();
 
 		/*! Sets the position parameter to the world position distance units in
@@ -86,7 +84,7 @@ namespace Spline
 		/*! \return The total length of the curve. */
 		inline float getLength() const;
 
-		/*! \return The amount of controlpoints. */
+		/*! \return The amount of control points. */
 		inline unsigned int getNumOfControlPoints() const;
 
 		/*! \return The specified segment from the beginning of the curve. */

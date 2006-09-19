@@ -36,7 +36,7 @@ namespace Spline
 		tangent[2] = mSegments[0]->getEnd()->position.z - mSegments[0]->getBegin()->position.z;
 		mSegments[0]->setBeginTangent(tangent);
 
-		for(unsigned int i = 0; i < mAmount-2; ++i)
+		for(register unsigned int i = 0; i < mAmount-2; ++i)
 		{
 			tangent[0] = strength * (mSegments[i+1]->getEnd()->position.x - mSegments[i]->getBegin()->position.x);
 			tangent[1] = strength * (mSegments[i+1]->getEnd()->position.y - mSegments[i]->getBegin()->position.y);
