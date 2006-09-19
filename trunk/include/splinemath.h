@@ -59,12 +59,10 @@ namespace Spline
 			if(x == 0)
 				return 1;
 
-			unsigned int ans = 1;
+			unsigned int ans = x;
 
-			do 
-			{
+			while(--x)
 				ans *= x;
-			}while(--x);
 
 			return ans;
 		}
