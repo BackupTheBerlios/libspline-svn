@@ -1,3 +1,8 @@
+  * Version 0.1.2 (2006-08-19)
+    - The deletion of control points is performed by the curve instead of manually
+    - The tangent of the last control point in the Cardinal splines are now correctly calculated
+    - Performance improved
+
   * Version 0.1.1 (2006-06-25)
     - The getTangent function for Hermite splines is now 60 % faster
 

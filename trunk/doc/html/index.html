@@ -14,7 +14,7 @@
   </ul></div>
 <h1>libspline Documentation</h1>
 <p>
-<h3 align="center">0.1.1</h3><h1>libspline</h1>
+<h3 align="center">0.1.2</h3><h1>libspline</h1>
 <p>
 libspline is a C++ spline library with focus on speed and real-time applications integration.
 <h2>Features</h2>
@@ -40,8 +40,6 @@ int main()
 	points[2].position.x = 2.0f; points[2].position.y = 0.0f; points[2].position.z = 0.0f;
 
 	Spline::CatmullRom curve(points, 3);
-
-	delete[] points;
 
 	return 0;
 }
@@ -190,7 +188,6 @@ int main()
 		std::cout << "Position: " << p.x << ", " << p.y << ", " << p.z << std::endl;
 	}
 
-	delete[] points;
 	delete curve;
 
 	return 0;
@@ -198,7 +195,7 @@ int main()
 </pre></div>
 <h2>Author</h2>
 libspline is written by Joachim Klahr.
-<h3 align="center">0.1.1 </h3><hr size="1"><address style="align: right;"><small>Generated on Sun Jun 11 21:10:55 2006 for libspline by&nbsp;
+<h3 align="center">0.1.2 </h3><hr size="1"><address style="align: right;"><small>Generated on Sun Jun 11 21:10:55 2006 for libspline by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>
