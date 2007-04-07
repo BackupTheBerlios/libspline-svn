@@ -32,12 +32,13 @@ namespace Spline
 	void Hermite::getWorldPosition(float* position, float distance)
 	{
 		unsigned int segment = 0;
+		unsigned int amount = mAmount - 2;
 
 		do 
 		{
-			if(segment > (mAmount - 2))
+			if(segment > amount)
 			{
-				getPositionOnSegment(position, mSegments[mAmount-2]->getLengthFromBeginning() / mSegments[mAmount-2]->getLength(), mAmount-2);
+				getPositionOnSegment(position, mSegments[amount]->getLengthFromBeginning() / mSegments[amount]->getLength(), amount);
 				return;
 			}
 
@@ -52,12 +53,13 @@ namespace Spline
 	void Hermite::getTangent(float* tangent, float distance)
 	{
 		unsigned int segment = 0;
+		unsigned int amount = mAmount - 2;
 
 		do 
 		{
-			if(segment > (mAmount - 2))
+			if(segment > amount)
 			{
-				getTangentOnSegment(tangent, mSegments[mAmount-2]->getLengthFromBeginning() / mSegments[mAmount-2]->getLength(), mAmount-2);
+				getTangentOnSegment(tangent, mSegments[amount]->getLengthFromBeginning() / mSegments[amount]->getLength(), amount);
 				return;
 			}
 
@@ -71,10 +73,11 @@ namespace Spline
 	// -------------------------------------------------------------------------
 	void Hermite::getPositionOnSegment(float* position,	float distance,	unsigned int segment)
 	{
-		float fH1 = (2.0f * distance - 3.0f) * distance * distance + 1.0f;
-		float fH2 = (distance - 2.0f) * distance * distance + distance;
-		float fH3 = (distance * distance - distance) * distance;
-		float fH4 = (-2.0f * distance + 3.0f) * distance * distance;
+		float dMuld = distance * distance;
+		float fH1 = (2.0f * distance - 3.0f) * dMuld + 1.0f;
+		float fH2 = (distance - 2.0f) * dMuld + distance;
+		float fH3 = (dMuld - distance) * distance;
+		float fH4 = (-2.0f * distance + 3.0f) * dMuld;
 
 		ControlPoint* begin = mSegments[segment]->getBegin();
 		ControlPoint* end   = mSegments[segment]->getEnd();

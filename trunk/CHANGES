@@ -1,3 +1,7 @@
+  * Version 0.1.3 (2007-04-07)
+    - Some time critical functions optimized to avoid aliasing
+	- Warnings removed
+
   * Version 0.1.2 (2006-08-19)
     - The deletion of control points is performed by the curve instead of manually
     - The tangent of the last control point in the Cardinal splines are now correctly calculated

@@ -55,15 +55,16 @@ namespace Spline
 	}
 
 	// -------------------------------------------------------------------------
-	void Bezier::getPositionOnSegment(float* position, float distance, unsigned int segment)
+	void Bezier::getPositionOnSegment(float* position, float distance, unsigned int)
 	{
 		position[0] = 0;
 		position[1] = 0;
 		position[2] = 0;
 
 		float b;
+		unsigned int n = mAmount - 1;
 
-		for(register unsigned int i = 0; i < mAmount-1; ++i)
+		for(register unsigned int i = 0; i < n; ++i)
 		{
 			b = getBernsteinValue(distance, i);
 			position[0] += mSegments[i]->getBegin()->position.x * b;
@@ -78,14 +79,15 @@ namespace Spline
 	}
 
 	// -------------------------------------------------------------------------
-	void Bezier::getTangentOnSegment(float* tangent, float distance, unsigned int segment)
+	void Bezier::getTangentOnSegment(float*, float, unsigned int)
 	{
 	}
 
 	// -------------------------------------------------------------------------
 	float Bezier::getBernsteinValue(float t, unsigned int i)
 	{
-		return (Math::faculty(mAmount-1) * Math::pow(t, i) * Math::pow(1.0f-t, mAmount-1-i)) /
-			   (Math::faculty(i) * Math::faculty(mAmount-1-i));
+		unsigned int amount = mAmount - 1;
+		return (Math::faculty(amount) * Math::pow(t, i) * Math::pow(1.0f-t, amount-i)) /
+			   (Math::faculty(i) * Math::faculty(amount-i));
 	}
 }
