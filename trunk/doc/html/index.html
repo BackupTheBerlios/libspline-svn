@@ -14,7 +14,7 @@
   </ul></div>
 <h1>libspline Documentation</h1>
 <p>
-<h3 align="center">0.1.2</h3><h1>libspline</h1>
+<h3 align="center">0.1.4</h3><h1>libspline</h1>
 <p>
 libspline is a C++ spline library with focus on speed and real-time applications integration.
 <h2>Features</h2>
@@ -29,7 +29,9 @@ have to set up your own project. This should'nt be any problem though it does'nt
 <h3>Most simple application</h3>
 Set up the include path in your IDE and link with libspline.lib (libspline.a).
 All splines consists of control points. The first thing you have to do before you create your spline is to create these points. By studying this simple
-example you should understand how it works.
+example you should understand how it works. Important to remember is to create the control points as a pointer to an array since libspline will try to delete
+the points when the curve is being deleted. If you don't you will get a crash when the curve is removed. Since the library deleted the control points for you
+you should not delete them.
 <div class="fragment"><pre class="fragment">#include "spline.h"
 
 int main()
@@ -195,7 +197,7 @@ int main()
 </pre></div>
 <h2>Author</h2>
 libspline is written by Joachim Klahr.
-<h3 align="center">0.1.2 </h3><hr size="1"><address style="align: right;"><small>Generated on Sun Jun 11 21:10:55 2006 for libspline by&nbsp;
+<h3 align="center">0.1.4 </h3><hr size="1"><address style="align: right;"><small>Generated on Wed Sep 26 21:10:55 2007 for libspline by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.4.6-NO </small></address>
 </body>
